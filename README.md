@@ -24,7 +24,11 @@ example.php를 참고하세요.
 			return array(
 				"/api/static" = "staticResult",
 				"/api/user/*" => "showUserInfo",
-				"/api/user/*/isfriend/*" => "showUserRelationship"
+				"/api/user/*/isfriend/*" => "showUserRelationship",
+				"/api/this/is/closure/*/*" => function ($param1, $param2){
+					echo $param1 . $param2;
+				}
+				// Closure도 사용가능합니다.
 			);
 		}
 		// map()에서 사용한 함수는 모두 이 클래스 내부에 정의되어야합니다.

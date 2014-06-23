@@ -60,6 +60,12 @@
 			$this->header();
 
 			// 호출
+
+			if($func instanceof Closure){
+				call_user_func_array($func, $args);
+				return;
+			}
+
 			if(sizeof($args)){
 				call_user_func_array(array($this,$func), $args);
 			}else{
